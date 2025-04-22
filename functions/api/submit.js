@@ -6,6 +6,6 @@ export async function onRequestPost(context) {
         return new Response("Missing message", { status: 400 });
     }
     // Store in KV with key "msg"
-    await env.messages.put("msg", message);
+    await env.MESSAGES.put("msg", message);
     return new Response("Message stored!", { status: 200 });
 }
