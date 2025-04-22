@@ -1,7 +1,7 @@
 export async function onRequestPost(context) {
     const { request, env } = context;
     const formData = await request.formData();
-    const message = formData.get("name");
+    const message = formData.get("message");
     if (!message) {
         return new Response("Missing message", { status: 400 });
     }
