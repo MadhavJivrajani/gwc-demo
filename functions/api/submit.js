@@ -1,16 +1,11 @@
-/**
- * POST /api/submit
- */
 export async function onRequestPost(context) {
-    try {
-      let input = await context.request.formData();
-      let pretty = JSON.stringify([...input], null, 2);
-      return new Response(pretty, {
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-      });
-    } catch (err) {
-      return new Response("Error parsing JSON content", { status: 400 });
+    const { request, env } = context;
+    const formData = await request.formData();
+    const message = formData.get("name");
+    if (!message) {
+        return new Response("Missing message", { status: 400 });
     }
+    // Store in KV with key "msg"
+    await env.messages.put("msg", message);
+    return new Response("Message stored!", { status: 200 });
 }
