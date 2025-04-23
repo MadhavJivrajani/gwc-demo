@@ -1,14 +1,21 @@
 <html lang="en">
   <head>
-    <meta charset="utf8" />
-    <title>HALP!</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HALP!</title>
+        <link rel="stylesheet" type="text/css"  href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+      </head>
   </head>
   <body>
-    <form method="POST" action="/api/submit">
-        <label for="message">What do you want to convey?</label>
-        <input type="text" id="message" name="message" required>
-        <button type="submit">Submit</button>
-      </form>
+    <div class="center-container">
+        <div class="emoji">🤭</div>
+        <form method="POST" action="/api/submit">
+            <label for="message">Choose Your Message Wisely!</label>
+            <input type="text" id="message" name="message" placeholder="Halp Message" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
   </body>
 </html>

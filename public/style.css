@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0c3fc 0%, #f9a1bc 100%);
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 90vw;
+}
+
+.emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(60, 20, 70, 0.07);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type="text"] {
+    width: 90vw;
+    max-width: 350px;
+    padding: 1rem 1.3rem;
+    border: 1.5px solid #e0c3fc;
+    border-radius: 1.8rem;
+    background: #fff;
+    font-size: 1.2rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    color: #a14b7f; /* Fancy, solid color for visibility */
+    box-shadow: 0 2px 16px 0 rgba(60, 20, 70, 0.07);
+    outline: none;
+    transition: box-shadow 0.18s, background 0.18s, border-color 0.18s;
+    letter-spacing: 0.02em;
+}
+
+input[type="text"]::placeholder {
+    color: #c89edb;
+    font-weight: 400;
+    opacity: 1;
+    letter-spacing: 0.01em;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 4px 24px 0 rgba(60, 20, 70, 0.15);
+    border-color: #d16ba5;
+    background: #fff;
+}
+
+button[type="submit"] {
+    width: 90vw;
+    max-width: 350px;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 1.8rem;
+    background: rgba(255,255,255,0.5);
+    color: #a14b7f;
+    font-size: 1.1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 16px 0 rgba(60, 20, 70, 0.07);
+    transition: background 0.2s, color 0.2s, box-shadow 0.15s;
+    margin-top: 0.2rem;
+    letter-spacing: 0.02em;
+}
+
+button[type="submit"]:hover, button[type="submit"]:focus {
+    background: rgba(255,255,255,0.85);
+    color: #d16ba5;
+    box-shadow: 0 4px 24px 0 rgba(60, 20, 70, 0.13);
+    outline: none;
+}
+
+@media (max-width: 500px) {
+    .emoji {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    input[type="text"],
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+    }
+}
+  
