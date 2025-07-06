@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"time"
 )
 
@@ -47,8 +48,9 @@ func main() {
 		log.Println("Key not found, retrying...")
 	}
 
-	// TODO: invoke halp.
-	fmt.Println("Value:", value)
+	if err := exec.Command("halp", "-m", value); err != nil {
+		log.Fatalf("error executing halp command: %v\n", err)
+	}
 }
 
 func getAndDeleteKey(key, accountID, namespaceID, apiToken string) string {
